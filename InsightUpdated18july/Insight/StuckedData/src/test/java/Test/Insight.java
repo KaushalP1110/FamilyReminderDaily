@@ -47,7 +47,7 @@ public class Insight {
 
             // OrganizationUrl =System.getenv("OrganizationUrl");
             date_range=System.getenv("date_range");
-            impersonate_token =System.getenv("impersonate_token :");
+            impersonate_token =System.getenv("impersonate_token");
         }
         else {
             //  OrganizationUrl =dotenv.get("OrganizationUrl");
