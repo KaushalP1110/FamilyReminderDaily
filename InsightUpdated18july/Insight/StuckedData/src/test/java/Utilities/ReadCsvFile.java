@@ -15,7 +15,7 @@ public class ReadCsvFile {
     public static String clientName;
     public static List<List<String>>  ReadCsvData() {
         //String filePath ="C:\\Users\\Kaushal\\Downloads\\Data.csv";
-       String filePath ="C:\\Users\\Kaushal\\OneDrive\\Desktop\\Location ID.csv";
+       String filePath ="D:\\Automation\\family Reminder hourlt\\InsightUpdated18july\\Location ID.csv";
        //String filePath ="C:\\Users\\Kaushal\\Downloads\\Ascend.csv";
         List<List<String>> credentials = new ArrayList<>();
         try (CSVReader reader = new CSVReader(new FileReader(filePath))) {

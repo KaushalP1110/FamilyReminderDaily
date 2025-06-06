@@ -11,7 +11,7 @@ public class Imporsanate_Url
     public static String impersonate_URL = "https://api.adit.com/auth/impersonate";
     //public static String impersonate_Org = Url.getOrgID();
     //public static String client_LocationID = Url.getLocID();
-    public static String impersonate_token = "YWRpdGFwcEBTM0tO";
+    public static String impersonate_token = "YWRpdGFwcEA0WTlm";
     public static String date_range ="2025-06-05";
     public static String locationTimezone;
     public static Response impersonate_url()
