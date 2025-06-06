@@ -4,6 +4,7 @@ import API.Patient_Scheduled;
 import API.Url;
 import Utilities.EmailUtility;
 import Utilities.Imporsanate_Url;
+import io.github.cdimascio.dotenv.Dotenv;
 import Utilities.ReadCsvFile;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -11,6 +12,8 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.*;
+
+import javax.swing.text.Utilities;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -25,6 +28,33 @@ public class Insight {
     public static String Clientname;
     public static String inputFilePath;
     public static String outputFilePath;
+
+    static Dotenv dotenv = Dotenv.load();
+
+
+    public static String date_range;
+    public static String impersonate_token;
+    public static String Location_id;
+
+    // Default report file name if Ehr is null or empty
+    String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+
+
+    static {
+        boolean github = true;
+        if (github) {
+
+            // OrganizationUrl =System.getenv("OrganizationUrl");
+            date_range=System.getenv("date_range");
+            impersonate_token =System.getenv("impersonate_token :");
+        }
+        else {
+            //  OrganizationUrl =dotenv.get("OrganizationUrl");
+            date_range =dotenv.get("date_range");
+            impersonate_token =dotenv.get("impersonate_token");
+        }
+    }
+
     @BeforeSuite
     public void setUp() {
         String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
@@ -119,7 +149,7 @@ public class Insight {
             );
 
             String subject = "Automated Test Report";
-            String message = "Hello @Pranav Sir, @Darshan Bhai. This Is A Insight report of date: " + Imporsanate_Url.date_range;
+            String message = "Hello @Pranav Sir, @Darshan Bhai. This Is A Insight report of date: " + date_range;
 
             // Iterate through each recipient and send email
             for (String toAddress : toAddresses)

@@ -9,6 +9,8 @@ import javax.mail.*;
 import javax.mail.internet.*;
 import java.util.*;
 
+import static Test.Insight.date_range;
+
 public class EmailUtility {
 
     // Map to store clients with reminder sent
@@ -75,7 +77,7 @@ public class EmailUtility {
 
         html.append("<html><body>");
         html.append("<h2 style='color:#0073e6;'>🚀 Family Reminder Insight Report</h2>");
-        html.append("<p>Date: <b>").append(Imporsanate_Url.date_range).append("</b></p>");
+        html.append("<p>Date: <b>").append(date_range).append("</b></p>");
 
         if (clientsWithReminder.isEmpty()) {
             html.append("<p style='color:red;'>❌ No Family Reminders Sent</p>");

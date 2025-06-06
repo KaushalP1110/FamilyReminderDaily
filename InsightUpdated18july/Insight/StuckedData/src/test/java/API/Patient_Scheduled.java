@@ -13,6 +13,7 @@ import java.time.ZoneId;
 import java.util.HashMap;
 import java.util.Map;
 
+import static Test.Insight.date_range;
 import static Utilities.EpochTimeToDateTime.epochTimeToDateTime;
 import static io.restassured.RestAssured.given;
 
@@ -49,8 +50,8 @@ public class Patient_Scheduled
                 .contentType("application/json")
                 .queryParam("organization", Insight.impersonate_Org)
                 .queryParam("location", Insight.client_LocationID)
-                .queryParam("date_range_start", Imporsanate_Url.date_range)
-                .queryParam("date_range_end", Imporsanate_Url.date_range)
+                .queryParam("date_range_start", date_range)
+                .queryParam("date_range_end", date_range)
                 .queryParam("is_appointment", "WEB,EHR,PA")
                 .queryParam("is_appointmentlog", "log")
                 .header("accept", "application/json, text/plain, */*\n")
