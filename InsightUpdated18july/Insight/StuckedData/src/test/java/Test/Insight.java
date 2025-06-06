@@ -40,7 +40,8 @@ public class Insight {
     String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
 
 
-    static {
+    static
+    {
         boolean github = true;
         if (github) {
 

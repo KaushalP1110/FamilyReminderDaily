@@ -27,7 +27,7 @@ public class Imporsanate_Url
                 "}";
         String contentType = "application/json";
 // Login Url
-        Response response = given()
+        Response response = given().log().all()
                 .contentType(contentType).
                 header("accept", "application/json, text/plain, */*\n")
                 .header("Origin", "https://app.adit.com")
